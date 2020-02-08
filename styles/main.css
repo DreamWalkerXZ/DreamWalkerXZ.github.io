@@ -1671,7 +1671,7 @@ ul li {
         }
         
         .gt-bg-accent-color-second {
-          background: RGBA(145,185,246,0.14)!important;
+          background: RGBA(145,185,246,0.1)!important;
         }
         
         .gt-c-theme-color-first {
@@ -1695,7 +1695,7 @@ ul li {
         }
         
         .gt-c-accent-color-second {
-          color: RGBA(145,185,246,0.14)!important;
+          color: RGBA(145,185,246,0.1)!important;
         }
         
         body {
@@ -1731,11 +1731,11 @@ ul li {
         }
         
         .gt-post-content blockquote {
-          background: RGBA(145,185,246,0.14)!important;
+          background: RGBA(145,185,246,0.1)!important;
           border-color: #91b9f6!important;
         }
         
         .gt-post-content code {
-          background: RGBA(145,185,246,0.14)!important;
+          background: RGBA(145,185,246,0.1)!important;
         }
          
