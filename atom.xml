@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dreamwalkerxz.github.io</id>
     <title>DreamWalkerXZ的博客</title>
-    <updated>2020-02-08T12:16:55.103Z</updated>
+    <updated>2020-02-08T12:34:49.961Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dreamwalkerxz.github.io"/>
     <link rel="self" href="https://dreamwalkerxz.github.io/atom.xml"/>
@@ -46,11 +46,11 @@ Docker利用Linux核心中的资源分离机制，例如cgroups，以及Linux核
 <h2 id="使用docker">使用Docker</h2>
 <h3 id="获取镜像">获取镜像</h3>
 <p>Docker根据一个“镜像”来生成一个容器，这些镜像一般可以在<a href="https://hub.docker.com">🚀Docker Hub</a>上找到，接下来我们将来获取这些镜像</p>
-<pre><code class="language-bash">docker pull 镜像名称[:版本，默认latest]
+<pre><code class="language-shell">$ docker pull 镜像名称[:版本，默认latest]
 </code></pre>
 <p>更多的选项可以通过 <code>docker pull --help</code> 命令看到</p>
-<p>实操</p>
-<pre><code class="language-bash">$ docker pull ubuntu:18.04
+<p>具体操作(下载一个ubuntu镜像，版本为18.04)</p>
+<pre><code class="language-shell">$ docker pull ubuntu:18.04
 # 18.04: Pulling from library/ubuntu
 # bf5d46315322: Pull complete
 # 9f13e0ac480c: Pull complete
@@ -62,7 +62,7 @@ Docker利用Linux核心中的资源分离机制，例如cgroups，以及Linux核
 </code></pre>
 <h3 id="启动镜像-容器">启动镜像 -&gt; 容器</h3>
 <p>主要命令 <code>docker run</code></p>
-<pre><code class="language-bash">$ docker run ubuntu:18.04 /bin/echo 'Hello world'
+<pre><code class="language-shell">$ docker run ubuntu:18.04 /bin/echo 'Hello world'
 # Hello world
 </code></pre>
 <p>这时发生了什么：<br>
@@ -78,7 +78,7 @@ Docker利用Linux核心中的资源分离机制，例如cgroups，以及Linux核
 <h3 id="overweb的逻辑图">OverWeb的逻辑图</h3>
 <figure data-type="image" tabindex="1"><a href="https://i.loli.net/2019/03/15/5c8baeec90503.png"><img src="https://i.loli.net/2019/03/15/5c8baeec90503.png" alt="OverWeb.png" loading="lazy"></a></figure>
 <h3 id="overweb的文件结构">OverWeb的文件结构</h3>
-<pre><code class="language-bash">$ tree
+<pre><code class="language-shell">$ tree
 .
 ├── LICENSE
 ├── README.md
@@ -134,7 +134,7 @@ Docker利用Linux核心中的资源分离机制，例如cgroups，以及Linux核
 8 directories, 42 files
 </code></pre>
 <h3 id="安装运行">安装&amp;运行</h3>
-<pre><code class="language-bash"># 需要Docker以及Python3环境
+<pre><code class="language-shell"># 需要Docker以及Python3环境
 $ git clone https://github.com/DreamWalkerXZ/OverWeb.git
 $ cd ./OverWeb
 $ docker pull consol/ubuntu-icewm-vnc
