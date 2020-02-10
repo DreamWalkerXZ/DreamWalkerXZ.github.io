@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dreamwalkerxz.github.io</id>
     <title>DreamWalkerXZ的博客</title>
-    <updated>2020-02-10T03:11:50.640Z</updated>
+    <updated>2020-02-10T03:16:45.179Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dreamwalkerxz.github.io"/>
     <link rel="self" href="https://dreamwalkerxz.github.io/atom.xml"/>
@@ -54,8 +54,7 @@
 <li>弹幕在弹幕数据库中的rowID，用于『历史弹幕』功能</li>
 </ul>
 <blockquote>
-<p>感谢**@张书樵**对弹幕数据格式的解析——<br>
-<em>https://zhangshuqiao.org/2018-03/Bilibili%E5%BC%B9%E5%B9%95%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%A3%E6%9E%90/</em></p>
+<p>感谢**@张书樵**对弹幕数据格式的解析<a href="https://zhangshuqiao.org/2018-03/Bilibili%E5%BC%B9%E5%B9%95%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%A3%E6%9E%90/">🚀他的博客</a></p>
 </blockquote>
 <h2 id="将弹幕转换为ass字幕">将弹幕转换为ASS字幕</h2>
 <h3 id="数据结构">数据结构</h3>
@@ -246,10 +245,10 @@ if __name__ == &quot;__main__&quot;:
     main()
 </code></pre>
 <h3 id="使用方法">使用方法</h3>
-<pre><code class="language-shell">git clone https://github.com/DreamWalkerXZ/BilibiliDanmu2Ass.git
-cd ./BilibiliDanmu2Ass
-pip3 install requests
-python3 main.py # 输入为B站视频地址, 输出为该视频cid.ass字幕文件(在当前目录)
+<pre><code class="language-shell">$ git clone https://github.com/DreamWalkerXZ/BilibiliDanmu2Ass.git
+$ cd ./BilibiliDanmu2Ass
+$ pip3 install requests
+$ python3 main.py # 输入为B站视频地址, 输出为该视频cid.ass字幕文件(在当前目录)
 </code></pre>
 ]]></content>
     </entry>
