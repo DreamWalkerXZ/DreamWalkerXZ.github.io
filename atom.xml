@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dreamwalkerxz.github.io</id>
     <title>DreamWalkerXZ的博客</title>
-    <updated>2020-02-11T02:42:27.188Z</updated>
+    <updated>2020-02-17T14:08:19.886Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dreamwalkerxz.github.io"/>
     <link rel="self" href="https://dreamwalkerxz.github.io/atom.xml"/>
@@ -14,8 +14,8 @@
     <rights>All rights reserved 2020, DreamWalkerXZ的博客</rights>
     <entry>
         <title type="html"><![CDATA[关于gridea-theme-pure的魔改版]]></title>
-        <id>https://dreamwalkerxz.github.io/post/guan-yu-gridea-theme-pure-de-mo-gai-ban</id>
-        <link href="https://dreamwalkerxz.github.io/post/guan-yu-gridea-theme-pure-de-mo-gai-ban">
+        <id>https://dreamwalkerxz.github.io/post/guan-yu-gridea-theme-pure-de-mo-gai-ban/</id>
+        <link href="https://dreamwalkerxz.github.io/post/guan-yu-gridea-theme-pure-de-mo-gai-ban/">
         </link>
         <updated>2020-02-10T08:27:38.000Z</updated>
         <summary type="html"><![CDATA[<p>gridea-theme-pure的魔改版，也就是我的博客现在使用的主题</p>
@@ -25,8 +25,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Bilibili弹幕转ASS字幕]]></title>
-        <id>https://dreamwalkerxz.github.io/post/bilibili-dan-mu-zhuan-ass-zi-mu</id>
-        <link href="https://dreamwalkerxz.github.io/post/bilibili-dan-mu-zhuan-ass-zi-mu">
+        <id>https://dreamwalkerxz.github.io/post/bilibili-dan-mu-zhuan-ass-zi-mu/</id>
+        <link href="https://dreamwalkerxz.github.io/post/bilibili-dan-mu-zhuan-ass-zi-mu/">
         </link>
         <updated>2019-09-14T10:17:11.000Z</updated>
         <summary type="html"><![CDATA[<p>本文将介绍Bilibili的弹幕机制与将弹幕转换为ASS字幕的方法</p>
@@ -36,8 +36,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[通过一个小项目学习Docker]]></title>
-        <id>https://dreamwalkerxz.github.io/post/tong-guo-yi-ge-xiao-xiang-mu-xue-xi-docker</id>
-        <link href="https://dreamwalkerxz.github.io/post/tong-guo-yi-ge-xiao-xiang-mu-xue-xi-docker">
+        <id>https://dreamwalkerxz.github.io/post/tong-guo-yi-ge-xiao-xiang-mu-xue-xi-docker/</id>
+        <link href="https://dreamwalkerxz.github.io/post/tong-guo-yi-ge-xiao-xiang-mu-xue-xi-docker/">
         </link>
         <updated>2019-03-15T12:17:18.000Z</updated>
         <summary type="html"><![CDATA[<p>想要拥有一个浏览器里面的的浏览器吗（禁止套娃🤣）<br>

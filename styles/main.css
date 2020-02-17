@@ -716,7 +716,6 @@ ul li {
   font-weight: bold;
   margin-top: 16px;
   margin-bottom: 16px;
-  align-self: start;
 }
 .archives-container .post {
   padding: 16px 0;
@@ -1737,5 +1736,15 @@ ul li {
         
         .gt-post-content code {
           background: RGBA(145,185,246,0.1)!important;
+        }
+
+        .archives-container {
+          align-items: center;
+        }
+
+        .archives-container .year {
+          color: #e8e9ed!important;
+          position: relative!important;
+          background: linear-gradient(180deg, transparent 75%, RGBA(145,185,246,0.4) 0)!important;
         }
         
