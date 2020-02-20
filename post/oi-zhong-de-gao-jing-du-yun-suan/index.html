@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>关于gridea-theme-pure-mod | DreamWalkerXZ的博客</title>
+<title>OI中的高精度运算 | DreamWalkerXZ的博客</title>
 
 <link rel="shortcut icon" href="https://dreamwalkerxz.github.io/favicon.ico?v=1582164314968">
 <link rel="stylesheet" href="https://dreamwalkerxz.github.io/styles/main.css">
@@ -92,52 +92,217 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    关于gridea-theme-pure-mod
+                    OI中的高精度运算
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2020-02-10 ·
+                        · 2019-10-04 ·
                     </time>
                     
-                        <a href="https://dreamwalkerxz.github.io/tag/LwwwA_vge/" class="post-tags">
-                            # Gridea
+                        <a href="https://dreamwalkerxz.github.io/tag/nk99_JHFO/" class="post-tags">
+                            # OI
                         </a>
                     
-                        <a href="https://dreamwalkerxz.github.io/tag/6A078ckLJz/" class="post-tags">
-                            # 主题
+                        <a href="https://dreamwalkerxz.github.io/tag/7HYQsM7NlS/" class="post-tags">
+                            # 笔记
                         </a>
                     
                 </div>
                 <div class="post-content">
-                    <p>gridea-theme-pure的魔改版，也就是我的博客现在使用的主题</p>
+                    <p>本文将列举出NOI中常见的几种高精度算法，希望对大家有帮助😝!</p>
 <!-- more -->
-<p>项目地址：<a href="https://github.com/DreamWalkerXZ/gridea-theme-pure-mod">🚀Github</a></p>
-<h2 id="介绍">介绍</h2>
+<h2 id="简介">简介</h2>
 <blockquote>
-<p>本主题魔改自<a href="https://github.com/imhanjie/gridea-theme-pure">🚀gridea-theme-pure</a></p>
+<p>高精度计算是一种程序设计的算法。由于中央处理器的字长限制，如32位CPU中一个整数最大只能取值4,294,967,295。因此在进行更大范围的数值计算中，往往要采取模拟手段。通常通过分离字符的方法通过数字数组进行输入。通过数组倒序输出。通过模拟竖式计算进行计算。一般而言，主要模拟的是按位运算，可以用不同的进位制达成不同的目的。<br>
+<em>——Wikipedia</em></p>
 </blockquote>
-<p>本主题是一款专为 Gridea 设计的主题，默认内置 &quot;谷歌蓝&quot; 配色方案。另外还：</p>
-<ul>
-<li>支持自定义配色。</li>
-<li>移动端页面适配。</li>
-<li>支持社交信息设置。</li>
-<li>支持谷歌统计。</li>
-</ul>
-<h2 id="安装">安装</h2>
-<p>使用 <code>git clone</code> 本项目到 Gridea 站点源文件路径的 <code>themes</code> 目录内，然后<strong>重启  Gridea</strong> 即可。</p>
-<blockquote>
-<p>Gridea 站点源文件路径：可在 Gridea 客户端设置页面查看。</p>
-</blockquote>
-<h2 id="预览">预览</h2>
-<p>示例站点：<a href="https://dreamwalkerxz.github.io/">🚀DreamWalkerXZ的博客</a></p>
-<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/02/10/qmpAehEvcYUiK5r.png" alt="dreamwalkerxz.github.io_.png" loading="lazy"></figure>
-<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/02/10/jNd5aVhZGr3CFPs.png" alt="localhost_4000_post_guan-yu-gridea-theme-pure.png" loading="lazy"></figure>
-<h2 id="感谢">感谢</h2>
-<ul>
-<li><a href="https://gridea.dev/">🚀Gridea - 一个静态博客写作客户端</a></li>
-<li><a href="https://github.com/getgridea/gridea-theme-starter">🚀gridea-theme-starter</a></li>
-<li><a href="https://github.com/imhanjie/gridea-theme-pure">🚀gridea-theme-pure</a></li>
-</ul>
+<h2 id="加法">加法</h2>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+using namespace std;
+
+void input(int arr[])
+{
+    char c;
+    int tmp[101] = {};
+    while ((c = cin.get()) != '\n')
+    {
+        tmp[0]++;
+        tmp[tmp[0]] = c - '0';
+    }
+    arr[0] = tmp[0];
+    for (int i = tmp[0]; i &gt;= 1; i--)
+    {
+        arr[tmp[0] - i + 1] = tmp[i]; // 倒序存入
+    }
+}
+
+void sum(int a[],int b[],int c[])
+{
+    int maxLen, x = 0; // maxLen即可能的最大长度, x即向更高一位的进位
+    if (a[0] &gt;= b[0])
+    {
+        maxLen = a[0] + 1;
+    }
+    else
+    {
+        maxLen = b[0] + 1;
+    }
+    c[0] = maxLen;
+    for (int i = 1; i &lt;= maxLen; i++) // 一位一位向高位计算
+    {
+        c[i] = a[i] + b[i] + x;
+        if (c[i] &gt;= 10)
+        {
+            x = c[i] / 10;
+            c[i] -= 10;
+        }
+    }
+    if (c[maxLen] == 0) // 若最高位为0则舍去最高位
+    {
+        c[0]--;
+    }
+}
+
+void output(int arr[])
+{
+    for (int i = arr[0]; i &gt;= 1; i--)
+    {
+        cout &lt;&lt; arr[i]; // 倒序输出
+    }
+    cout &lt;&lt; endl;
+}
+
+int main()
+{
+    int a[101] = {}, b[101] = {}, c[101] = {};
+    input(a);
+    input(b);
+    sum(a, b, c);
+    output(c);
+    return 0;
+}
+</code></pre>
+<h2 id="减法">减法</h2>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+using namespace std;
+
+void input(int arr[])
+{
+    char c;
+    int tmp[101] = {};
+    while ((c = cin.get()) != '\n')
+    {
+        tmp[0]++;
+        tmp[tmp[0]] = c - '0';
+    }
+    arr[0] = tmp[0];
+    for (int i = tmp[0]; i &gt;= 1; i--)
+    {
+        arr[tmp[0] - i + 1] = tmp[i];
+    }
+}
+
+void sub(int a[],int b[],int c[])
+{
+    for (int i = 1; i &lt;= a[0]; i++)
+    {
+        c[i] = a[i] - b[i];
+        if (c[i] &lt; 0)
+        {
+            a[i + 1]--;
+            c[i] += 10;
+        }
+    }
+    c[0] = a[0];
+    while (c[c[0]] == 0)
+    {
+        c[0]--;
+    }
+}
+
+void output(int arr[])
+{
+    for (int i = arr[0]; i &gt;= 1; i--)
+    {
+        cout &lt;&lt; arr[i];
+    }
+    cout &lt;&lt; endl;
+}
+
+int main()
+{
+    int a[101] = {}, b[101] = {}, c[101] = {};
+    input(a);
+    input(b);
+    sub(a, b, c); // 默认a-b大于0
+    output(c);
+    return 0;
+}
+</code></pre>
+<h2 id="乘法">乘法</h2>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/02/20/so1Fk67O2LlzxPD.jpg" alt="multiplication.jpg" loading="lazy"></figure>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+using namespace std;
+
+void input(int arr[])
+{
+    char c;
+    int tmp[101] = {};
+    while ((c = cin.get()) != '\n')
+    {
+        tmp[0]++;
+        tmp[tmp[0]] = c - '0';
+    }
+    arr[0] = tmp[0];
+    for (int i = tmp[0]; i &gt;= 1; i--)
+    {
+        arr[tmp[0] - i + 1] = tmp[i];
+    }
+}
+
+void mul(int a[],int b[],int c[])
+{
+    for (int indexB = 1; indexB &lt;= b[0]; indexB++)
+    {
+        for (int indexA = 1; indexA &lt;= a[0]; indexA++)
+        {
+            c[indexA + indexB - 1] += a[indexA] * b[indexB];
+            if (c[indexA + indexB - 1] &gt;= 10)
+            {
+                c[indexA + indexB - 1 + 1] += c[indexA + indexB - 1] / 10;
+                c[indexA + indexB - 1] %= 10;
+            }
+        }
+    }
+    c[0] = a[0] + b[0];
+    while (c[c[0]] == 0)
+    {
+        c[0]--;
+    }
+}
+
+void output(int arr[])
+{
+    for (int i = arr[0]; i &gt;= 1; i--)
+    {
+        cout &lt;&lt; arr[i];
+    }
+    cout &lt;&lt; endl;
+}
+
+int main()
+{
+    int a[101] = {}, b[101] = {}, c[201] = {};
+    input(a);
+    input(b);
+    mul(a, b, c);
+    output(c);
+    return 0;
+}
+</code></pre>
 
                 </div>
             </article>
@@ -146,8 +311,8 @@
         
             <div class="next-post">
                 <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://dreamwalkerxz.github.io/post/oi-zhong-de-gao-jing-du-yun-suan/" class="post-title gt-a-link">
-                    OI中的高精度运算
+                <a href="https://dreamwalkerxz.github.io/post/bilibili-dan-mu-zhuan-ass-zi-mu/" class="post-title gt-a-link">
+                    Bilibili弹幕转ASS字幕
                 </a>
             </div>
         
